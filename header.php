@@ -78,7 +78,7 @@
                             <!-- Contenedor flex para la fecha, imagen y texto -->
                             <div class="d-flex text text_slider">
                                 <p class="me-4">08.08.2021</p>
-                                <img class="line4 mt-2 me-4" src="img/Line 4.png" alt="line4">
+                                <img class="line4 mt-2 me-4" src="<?php echo get_template_directory_uri(); ?>img/Line 4.png" alt="">
                                 <p class="">Progressively incentivize cooperative systems through technically sound<br> functionalities. The credibly productivate seamless data.</p>
                             </div>
 

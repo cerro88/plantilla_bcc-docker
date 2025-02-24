@@ -629,8 +629,65 @@ h2{
 
 
 
-
+/* Desbordamiento del container-fluid */
 html, body {
     margin: 0 !important;
     padding: 0 !important;
 }
+
+
+
+/* formulario Contact Form 7 */
+#wpcf7-f44-p38-o1 {
+    display: flex;
+    justify-content: center; 
+    /* Centrar */
+    margin: 5vh 0 5vh 0;
+    /*arriba y abajo form*/
+    
+}
+
+/* Estilo del botón de enviar */
+.wpcf7-form-control.wpcf7-submit{
+    background-color: #0d6efd;
+    width: 15vh;
+    border-radius: 2vh;
+}
+
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 768px) {
+    .wpcf7-form {
+        width: 80%; /* Hacer el formulario más ancho */
+    }
+    
+    .wpcf7-form input,
+    .wpcf7-form textarea {
+        font-size: 14px;
+         /* Reducir tamaño de fuente */
+        padding: 8px; 
+        /* Menos padding */
+    }
+}
+
+
+
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+    .wpcf7-form {
+        width: 86%; /* Ocupar casi todo el ancho */
+        padding: 15px;
+    }
+
+    .wpcf7-form input,
+    .wpcf7-form textarea {
+        font-size: 
+        12px; /* Fuente más pequeña */
+        padding: 6px;
+    }
+}
+
+
+
