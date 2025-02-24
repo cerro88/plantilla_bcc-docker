@@ -2,53 +2,115 @@
 /**
  * Template Name: Plantilla de Home
  * Template Post Type: pages
- * Theme:bcc
  */
 ?>
 
-
-<!--se llama al header-->
 <?php get_header(); ?>
 
 
-      <!-- Contenedor blog regular -->
+        <!-- Contenedor blog regular -->
         <div class="blog-regular mt-5">
             <h2 class="topics mx-5 px-3">Popular topics</h2>
             <div class="row mx-5">
               
                 <div class="d-flex col-sm-12 col-md-6 filter">
-                    <p class="me-1 me-sm-2 me-md-3 all">All</p>
-                    <p class="me-1 me-sm-2 me-md-3">Adventure</p>
-                    <p class="me-1 me-sm-2 me-md-3">Travel</p>
-                    <p class="me-1 me-sm-2 me-md-3">Fashion</p>
-                    <p class="me-1 me-sm-2 me-md-3">Technology</p>
-                    <p class="me-1 me-sm-2 me-md-3">Branding</p>
+                    <a href=""> <p class="me-1 me-sm-2 me-md-3 all">All</p></a>
+                    <a href=""><p class="me-1 me-sm-2 me-md-3">Adventure</p></a>
+                    <a href=""><p class="me-1 me-sm-2 me-md-3">Travel</p></a>
+                    <a href=""><p class="me-1 me-sm-2 me-md-3">Fashion</p></a>
+                    <a href=""><p class="me-1 me-sm-2 me-md-3">Technology</p></a>
+                    <a href=""><p class="me-1 me-sm-2 me-md-3">Branding</p></a>
                 </div>
                 
                 <div class="col-sm-12 col-md-6">
-                    <p class="text-end filter">View All</p>
+                    <a href=""><p class="text-end filter">View All</p></a>
                 </div>
             </div>
 
-            <!-- Fila de tarjetas del blog -->
+            <!-- Fila de tarjetas del blog 1-->
             <div class="row mx-5">
-                
+            <?php 
+            // Configurar la consulta de publicaciones para mostrar 4 posts en la portada
+            $args = array(
+                'posts_per_page' => 11, // Número de posts a mostrar en la home
+                'post_type'      => 'post', // Tipo de contenido (post)
+                'orderby'        => 'date', // Ordenar por fecha
+                'order'          => 'DESC' // Mostrar los más recientes primero
+            );
+
+            $query = new WP_Query($args);
+
+            // Verificar si hay publicaciones
+            if ($query->have_posts()) : 
+                while ($query->have_posts()) : $query->the_post(); 
+            ?>
+
+            
+            
+            <!--Post dinámico -->
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="position-relative">
+                    <!-- Imagen destacada -->
+                    <?php if (has_post_thumbnail()) : ?>
+                        <img src="<?php the_post_thumbnail_url('medium'); ?>" class="img-fluid img-row" alt="<?php the_title(); ?>">
+                    <?php else : ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/default-image.jpg" class="img-fluid img-row" alt="Imagen por defecto">
+                    <?php endif; ?>
+
+                    <!-- Categoría principal -->
+                    <div class="position-absolute top-0 end-0 mt-1 me-2 p-2 text-white category text-center rounded">
+                        <?php
+                        $category = get_the_category();
+                        if (!empty($category)) {
+                            echo esc_html($category[0]->name);
+                        }
+                        ?>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- Fecha de publicación -->
+                    <p class="date my-3"><?php echo get_the_date('d.m.Y'); ?></p>
+                </div>
+                <div>
+                    <!-- Título con enlace al post -->
+                    <a href="<?php the_permalink(); ?>">
+                        <p class="title"><?php the_title(); ?></p>
+                    </a>
+                </div>
+                <div>
+                    <!-- Extracto del post -->
+                    <p class="paragraph"><?php the_excerpt(); ?></p>
+                </div>
+            </div>
+            
+            <?php 
+                endwhile;
+                wp_reset_postdata(); // Restablecer la consulta de WordPress
+            else : 
+            ?>
+                <p>No hay publicaciones disponibles.</p>
+            <?php endif; ?>
 
             </div>
-                
-    
+            <!--Fin de la fila de posts -->
+
+            </div>
+            <!--Fin del contenedor principal -->
+
+
         </div>
-        <!-- Fin del contenedor blog regular -->
+         <!--Fin del contenedor blog regular -->
 
 
         <!-- Contenedor Big Post -->
         <div class="big-post my-5">
             <div class="row ms-5">
-                
-                <div class="ms-2 col-1 text-center text-white fashion category p-2 rounded">
+                <div class="ms-5 col-5"></div>
+                <div class="ms-2 col-2 text-center text-white fashion category p-2 rounded">
                     FASHION
                 </div>
-            
+                <div class="col-5"></div>
             </div>
             <div class="contents text-center">
                 <h2 class="text-white">Richird Norton photorealistic rendering as real photos</h2>
@@ -89,7 +151,7 @@
                 ?>
                 
                 <!-- Post destacado dinámico -->
-                <div class="blog col-12 col-sm-12 col-md-6 col-lg-4 mt-5">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 mt-5">
                     <div class="position-relative">
                         <!-- Imagen destacada -->
                         <?php if (has_post_thumbnail()) : ?>

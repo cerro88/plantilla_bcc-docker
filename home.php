@@ -89,17 +89,7 @@
                         <!-- Extracto del contenido -->
                         <p class="paragraph px-5"><?php the_excerpt(); ?></p>
                     </div>
-                    <div>
-                        <img class="line3 ps-4" src="img/home2/Line3.png" alt="">
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <!-- Información del autor -->
-                        <img class="" src="<?php echo get_template_directory_uri(); ?>/img/home2/Ellipse4.png">
-                        <div class="ps-2">
-                            <p class="mb-0 name">By <?php the_author(); ?></p>
-                            <p class="mb-0 job">Author</p>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         <?php endwhile; ?>
