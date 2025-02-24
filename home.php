@@ -5,7 +5,9 @@
  */
 ?>
 
-<?php get_header(); // Incluye el encabezado de la página desde header.php ?>
+
+<!--se llama al header-->
+<?php get_header(); ?>
 
 <!-- Contenedor de categorías de blog -->
 <div class="blog-regular mt-5">
@@ -21,7 +23,8 @@
             <p class="me-1 me-sm-2 me-md-3">Branding</p>
         </div>
         <div class="col-sm-12 col-md-6">
-            <p class="text-end filter">View All</p> <!-- Enlace para ver todas las categorías -->
+            <p class="text-end filter">View All</p> 
+            <!-- Enlace para ver todas las categorías -->
         </div>
     </div>
 </div>
