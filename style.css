@@ -104,9 +104,9 @@ h1 {
 
 /* Estilo para los títulos de las secciones (h2) */
 .topics {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 46.08px;
+    font-weight: 700 !important;
+    font-size: 36px !important;
+    line-height: 46.08px  !important;
     color: #6C7575;
 }
 
@@ -137,9 +137,9 @@ h1 {
 
 /* Estilo para los títulos de las tarjetas */
 .title {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 25px;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    line-height: 25px !important;
     color: #495057;
 }
 
@@ -300,6 +300,10 @@ h2{
 }
 
 
+
+
+
+
 /*ARTÍCULO*/
 
 .imgarticle {
@@ -357,6 +361,10 @@ h2{
     font-size: 18px;
     line-height: 25px;
 }
+
+
+
+
 
 
 /*Contacto*/
@@ -593,12 +601,21 @@ h2{
     margin-left: 48% !important;
 }
 
+.big-post .row .col-2 {
+    flex: 0 0 auto;
+    width: 7.66666667%;
+}
+
 
 /*bigpost2 posición category*/
 .big-post2 .row {
     margin-left: 48%!important;
 }
 
+.big-post2 .row .col-2 {
+    flex: 0 0 auto;
+    width: 7.66666667%;
+}
 
 
 

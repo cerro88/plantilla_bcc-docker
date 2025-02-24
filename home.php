@@ -9,7 +9,8 @@
 <!--se llama al header-->
 <?php get_header(); ?>
 
-<!-- Contenedor de categorías de blog -->
+<body class="body2">
+    <!-- Contenedor de categorías de blog -->
 <div class="blog-regular mt-5">
     <h2 class="topics mx-5 px-3">Popular topics</h2> 
     <div class="row mx-5">
@@ -85,7 +86,7 @@
                             <h2 class="title px-5"><?php the_title(); ?></h2>
                         </a>
                     </div>
-                    <div>
+                    <div class="px-5">
                         <!-- Extracto del contenido -->
                         <p class="paragraph px-5"><?php the_excerpt(); ?></p>
                     </div>
@@ -116,7 +117,7 @@
         <!-- Contenedor Big Post -->
         <div class="big-post2 my-5">
             <div class="row ms-5">
-                <div class="ms-5 col-5"></div>
+            
                 <div class="ms-2 col-2 text-center text-white fashion category p-2 rounded">
                     FASHION
                 </div>
@@ -157,7 +158,7 @@
                     while ($query->have_posts()) : $query->the_post(); 
                 ?>
                 
-                <!-- 🔹 Post destacado dinámico -->
+                <!-- Post destacado dinámico -->
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-5">
                     <div class="position-relative">
                         <!-- Imagen destacada del post -->
@@ -201,5 +202,6 @@
         </div>
         <!-- Fin del contenedor blog metro -->
 
+</body>
 
 <?php get_footer(); // Incluye el pie de página desde footer.php ?>

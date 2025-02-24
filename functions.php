@@ -36,7 +36,7 @@ function add_custom_dynamic_styles() {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            min-height: 300px; /* Asegurar que el header tenga altura */
+            min-height: 600px; /* Asegurar que el header tenga altura */
             display: block;
         }
     </style>
