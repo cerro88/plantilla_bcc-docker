@@ -1,0 +1,611 @@
+
+/*
+Theme Name: bcc
+Author: bcc
+Description: Un tema personalizado para WordPress.
+Version: 1.0
+*/
+
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+a{
+    text-decoration: none !important;
+}
+
+/* Estilo general para resetear margenes y paddings del contenedor principal */
+/*Sin esto coge margenes por defecto*/
+.container-fluid {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Estilo general para todo el body */
+body{
+    font-family: "Lora", serif !important;
+}
+
+/* ----- NAVBAR ----- */
+/* Fondo transparente para el nav */
+.navbar-custom {
+    background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Color blanco con transparencia para el ícono del botón hamburguesa */
+.navbar-toggler-icon {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilo para los enlaces del menú de nav*/
+
+.nav-link{
+    font-family: "Roboto", serif;
+    color: #FFFF;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.06px;
+}
+
+/* Estilo para el texto RUNO */
+.runo {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22.4px;
+    color: #F8F9FA;
+}
+
+/* ----- SLIDER PRINCIPAL ----- */
+/* Imagen de fondo para el slider del blog */
+
+.imgblog1 {
+    background-image: url(/img/Image_blog_slider.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Estilo para el título principal H1*/
+h1 {
+    font-weight: 700 !important;
+    font-size: 36px !important;
+    line-height: 46.08px !important;
+}
+
+
+/* Estilo para textos secundarios */
+.text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #E5E5E5;
+}
+
+/* Fondo semitransparente para la categoría */
+.category {
+    background-color: rgb(229, 229, 229, 0.20);
+}
+
+/* Línea decorativa */
+.line4 {
+    height: 1px;
+    width: 1rem;
+}
+
+/* Padding para el bloque de texto del slider */
+.blog-text {
+    padding: 10rem 0 5rem 0;
+}
+
+/* ----- FILTROS DE TEMAS ----- */
+/* Color para el filtro "All" */
+.all {
+    color: #D4A373;
+}
+
+/* Estilo para los títulos de las secciones (h2) */
+.topics {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46.08px;
+    color: #6C7575;
+}
+
+/* Estilo para los filtros */
+.filter {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+
+
+/* ----- TARJETAS DE BLOG ----- */
+/* Ajustes para las imágenes de las tarjetas */
+.img-row {
+    width: 100%;
+    height: 50%;
+    object-fit:contain;
+}
+
+/* Estilo para las fechas de las tarjetas */
+.date {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15.36px;
+    color: #6C7575;
+}
+
+/* Estilo para los títulos de las tarjetas */
+.title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #495057;
+}
+
+/* Estilo para los párrafos de las tarjetas */
+.paragraph {
+    color: #6C757D;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.paragraph_picks p, .date_picks{
+    color: #E5E5E5;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+/* ----- BIG POST ----- */
+/* Imagen de fondo para el big post */
+.big-post {
+    background-image: url('/wp-content/themes/bcc/img/bigpost.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    /* Centrar la imagen */
+    background-position: center !important; 
+    /* Ajusta el padding dinámicamente */
+    padding: 20em 0 !important; 
+}
+
+/* Contenedor centralizado sin medidas fijas */
+.contents {
+    max-width: 100%;
+    width: 40%;
+    margin: 0 auto;
+}
+/* Estilo para la categoría "fashion" */
+.fashion {
+    width: 80px;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 11.72px;
+}
+
+
+/*Padding para centrar el texto de big-post*/
+.text-big-post{
+    padding: 0 20%;
+}
+
+
+h2{
+    font-weight: 700 !important;
+    font-size: 36px !important;
+    line-height: 46.08px !important;
+}
+
+/* ---- EDITOR PICK 'blog metro'---- */
+/*Problemas con absolute y relative= Solución diferentes breakpoints teniendo en cuenta que mi pantalla es muy grande*/
+
+/* ----- PIE DE PÁGINA ----- */
+/* Estilo general para el footer */
+.footer {
+    color: #E5E5E5;
+}
+
+/* Subfooter con color de fondo oscuro */
+.sub-footer {
+    background-color: #343A40;
+    color: #E5E5E5;
+}
+
+/* Estilo para el texto de la primera columna del subfooter */
+.sub-footer .col-md-6:first-child p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17.92px;
+}
+
+/* Estilo para el texto de la segunda columna del subfooter */
+.sub-footer .col-md-6:last-child p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17.92px;
+}
+
+
+
+
+
+/*HOME 2*/
+
+/* --- HOME 2 --- */
+/* ----- SLIDER SECUNDARIO ----- */
+/* Imagen de fondo para el segundo slider */
+.imgblog2 {
+    background-image: url(/img/home2/blog-sider2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Fondo de color gris claro para el body */
+.body2 {
+    background-color: #F8F9FA;
+}
+
+/* Ajustes para columnas dentro de las filas */
+.row > .col-md-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+}
+
+/* Ajustes para contenedores relativos */
+.position-relative {
+    height: 100%;
+}
+
+/* Estilo para las cajas de texto */
+.box-texto {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    padding: 15px;
+    border-radius: 0 0 5px;
+}
+
+/* Imagen de fondo para el segundo big post */
+.big-post2 {
+    background-image: url('/wp-content/themes/bcc/img/home2/bigpost2.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    padding: 20rem 0 20rem 0 !important;
+}
+
+.big-post2 .row {
+    margin-left: 45%!important;
+}
+
+/*---- cards blog cars----*/
+
+.name{
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.job{
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+
+/*ARTÍCULO*/
+
+.imgarticle {
+    background-image: url(/img/article/Rectangle9.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.name-slider{
+    color: #FFFF ;
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.line-art{
+    height: 1px;
+}
+
+.text-art{
+    color: #495057 ;
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.data-art{
+    color: #495057 ;
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.span{
+    color: #D4A373;
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46.08px;
+}
+
+.related-post{
+    background-color: #F8F9FA;
+}
+
+.related-post > div:first-child > p:first-child,
+.title-related {
+/* Estilo para el <p> dentro del primer div de related-post*/
+    color: #495057;
+    font-family: "Lora", serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+
+/*Contacto*/
+.imagen4{
+    background-image: url(/img/contacte/calas-y-playas-de-la-sierra-de-tramuntana.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERY */
+/*Pantallas con un ancho máximo de 480px */
+@media screen and (max-width: 480px) {
+    
+    h1{
+        font-size: 18px;
+    }
+
+    .text_slider {
+        display: flex;
+        flex-direction: column;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: #E5E5E5;
+    }
+
+    .blog-text {
+         /* Centra horizontalmente el contenedor principal */
+        margin: 0 auto; 
+        padding: 30px; 
+        text-align: center;
+    }
+
+    .line4{
+        margin-bottom: 20px;
+        margin-left: 155px;
+    }
+
+    .big-post {
+        background-image: url(/img/bigpost.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* Centrar la imagen */
+        background-position: center;
+        /* Ajusta el padding dinámicamente */
+        padding: 5vh 0;
+    }
+
+    /*HOME 2*/
+    .big-post2 {
+        background-image: url(/img/home2/bigpost2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* Centrar la imagen */
+        background-position: center;
+        /* Ajusta el padding dinámicamente */
+        padding: 5vh 0;
+    }
+
+
+    .contents {
+        max-width: 100%;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .text-big-post{
+        padding: 0;
+    }
+
+
+    h2{
+        font-size: 30px;
+    }
+
+    /*HOME 2*/
+    .blog1 .paragraph_picks{
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    /*HOME 2*/
+    .blog2 .paragraph_picks{
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    /*HOME 2*/
+    .blog1 .category{
+        font-size: 10px;
+    }
+
+    /*HOME 2*/
+    .blog2 .category{
+        font-size: 10px;
+    }
+
+    /*HOME 2*/
+    .box-texto{
+        margin-bottom: 15px;
+    }
+
+    /*ARTICLE*/
+    .imagen{
+        margin-top: 5px;
+    }
+
+    .mainline{
+        width: 50%;
+    }
+
+   
+    
+  
+
+}
+
+/*Pantallas con un ancho máximo de 366px */
+@media screen and (max-width: 366px){
+
+/*Se reducen fuentes para que quepan dentro de las imagenes o bien no sobresalgan ya que los breakpoints no bastan*/
+    .paragraph_picks, .date_picks{
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .title-pick {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .title-pick2 {
+        font-size: 10px;
+        line-height: 18px;
+    }
+
+    .filter {
+        font-size: 10px;
+    }
+
+    .topics{
+        font-size: 26px;
+    }
+  
+    .title{
+        font-size: 15px;
+    }
+
+    h2{
+        font-size: 26px;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Estilos de wordpress*/
+
+/*Menú*/
+
+.navbar-nav {
+    display: flex !important;
+    justify-content: right !important; /* Para distribuir uniformemente */
+    width: 100%; /* Asegura que ocupen todo el ancho disponible */
+}
+
+.navbar-nav a{
+    text-decoration: none;
+    color: #F8F9FA;
+    padding: 0 20px;
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.06px;
+}
+
+.navbar-brand{
+    color: #F8F9FA !important;
+    font-family: "League Spartan", sans-serif;
+    text-align: start !important;
+}
+
+
+
+
+/*Popular tropics links*/
+
+.filter .all{
+    color: #D4A373;
+    
+}
+
+.filter a p{
+    color: black;
+}
+
+/*View All*/
+.text-end{
+    color: black !important;
+}
+
+
+/*Big-post posición category*/
+
+.big-post .row{
+    margin-left: 48% !important;
+}
+
+
+/*bigpost2 posición category*/
+.big-post2 .row {
+    margin-left: 48%!important;
+}
+
+
+
+
+/*Paginación estilo*/
+.pagination-container .nav-links a,
+.pagination-container .nav-links span {
+    color: #343A40;
+    font-size: 20px;
+}
+
