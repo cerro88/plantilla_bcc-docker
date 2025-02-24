@@ -2,9 +2,12 @@
 /**
  * Template Name: Plantilla de Home
  * Template Post Type: pages
+ * Theme:bcc
  */
 ?>
 
+
+<!--se llama al header-->
 <?php get_header(); ?>
 
 

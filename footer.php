@@ -1,4 +1,13 @@
-    <footer>
+<?php
+/**
+ * Footer Template
+ * 
+ * Plantilla del pie de página utilizada en todas las páginas del sitio.
+ */
+?>
+
+   
+   <footer>
              <!-- Contenedor footer -->
             <div class="footer bg-dark py-5">
                 <div class="content-footer mx-5">

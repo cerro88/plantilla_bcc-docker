@@ -7,8 +7,7 @@
 
 <?php get_header(); // Incluye el encabezado de la página desde header.php ?>
 
-<main class="body2">
-    <!-- Contenedor de categorías de blog -->
+<!-- Contenedor de categorías de blog -->
 <div class="blog-regular mt-5">
     <h2 class="topics mx-5 px-3">Popular topics</h2> 
     <div class="row mx-5">
@@ -32,15 +31,21 @@
 <div class="row d-flex align-items-stretch pt-3 px-5">
 
     <?php 
-    query_posts(array(
-        'posts_per_page' => 8, // Limita a 8 publicaciones
-        'post_type'      => 'post', // Tipo de contenido (post)
-        'orderby'        => 'date', // Ordenar por fecha
-        'order'          => 'ASC' // Mostrar los más antiguas primero
-    ));
-
+    // Se comprueba si hay publicaciones disponibles en la consulta de WordPress
     if (have_posts()) : 
+        global $wp_query; // Obtiene la consulta global de publicaciones
     ?>
+
+        <!-- Paginación antes del bucle -->
+        <div class="pagination-container mt-4">
+            <?php 
+            the_posts_pagination(array(
+                'mid_size' => 2, // Número de páginas visibles antes y después de la actual
+                'prev_text' => __('Anterior', 'textdomain'), // Texto del botón "Anterior"
+                'next_text' => __('Siguiente', 'textdomain'), // Texto del botón "Siguiente"
+            )); 
+            ?>
+        </div>
 
         <!-- Bucle para recorrer todas las publicaciones -->
         <?php while (have_posts()) : the_post(); ?>
@@ -49,7 +54,7 @@
                     
                     <!-- Imagen destacada de la publicación -->
                     <?php if (has_post_thumbnail()) : ?>
-                        <img src="<?php the_post_thumbnail_url('large'); ?>" class="img-fluid img-row" alt="<?php the_title(); ?>">
+                        <img src="<?php the_post_thumbnail_url('thumbnail'); ?>" class="img-fluid img-row" alt="<?php the_title(); ?>">
                     <?php else : ?>
                         <img src="ruta/a/imagen-por-defecto.jpg" class="img-fluid img-row" alt="Imagen por defecto">
                     <?php endif; ?>
@@ -86,10 +91,10 @@
                     </div>
                     <div class="d-flex align-items-center">
                         <!-- Información del autor -->
-                        
+                        <img class="" src="<?php echo get_template_directory_uri(); ?>/img/home2/Ellipse4.png">
                         <div class="ps-2">
                             <p class="mb-0 name">By <?php the_author(); ?></p>
-                    
+                            <p class="mb-0 job">Author</p>
                         </div>
                     </div>
                 </div>
@@ -117,12 +122,12 @@
 
         <!-- Contenedor Big Post -->
         <div class="big-post2 my-5">
-            <div class="row">
-               
-                <div class="ms-2 col-1 text-center text-white fashion category p-2 rounded">
+            <div class="row ms-5">
+                <div class="ms-5 col-5"></div>
+                <div class="ms-2 col-2 text-center text-white fashion category p-2 rounded">
                     FASHION
                 </div>
-               
+                <div class="col-5"></div>
             </div>
             <div class="contents text-center">
                 <h2 class="text-white">Richird Norton photorealistic rendering as real photos</h2>
@@ -141,13 +146,14 @@
                 <h2>Editor's Pick</h2>
             </div>
 
-            <div class="row justify-content-center">
+            <div class="row">
                 <?php
                 // Configurar la consulta para obtener los 2 posts más recientes de la categoría "destacados"
                 $args = array(
                     'posts_per_page' => 2, // Mostrar solo 2 publicaciones
                     'post_type'      => 'post',
                     'orderby'        => 'date', // Ordenar por fecha
+                    'order'          => 'DESC', // Más recientes primero
                     'category_name'  => 'destacados' // Slug de la categoría
                 );
 
@@ -158,9 +164,8 @@
                     while ($query->have_posts()) : $query->the_post(); 
                 ?>
                 
-                <!--  Post destacado dinámico -->
-                
-                <div class="col-12 col-sm-12 col-md-5 col-lg-5 mt-5 mx-4 ms-5 ps-5">
+                <!-- 🔹 Post destacado dinámico -->
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-5">
                     <div class="position-relative">
                         <!-- Imagen destacada del post -->
                         <?php if (has_post_thumbnail()) : ?>
@@ -191,7 +196,6 @@
                         </div>
                     </div>
                 </div>
-            
 
                 <?php 
                     endwhile;
@@ -204,6 +208,5 @@
         </div>
         <!-- Fin del contenedor blog metro -->
 
-</main>
 
 <?php get_footer(); // Incluye el pie de página desde footer.php ?>

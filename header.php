@@ -1,3 +1,13 @@
+<?php
+/**
+ * Header Template
+ * 
+ * Plantilla del header utilizada en todas las páginas del sitio.
+ */
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,21 +36,30 @@
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
+
                         <!-- Contenedor de enlaces de navegación -->
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <?php
                             wp_nav_menu(array(
-                                'theme_location' => 'primary', // Debe coincidir con el registrado en functions.php
-                                'container' => 'ul', // Define que el contenedor será un <ul>
-                                'menu_class' => 'navbar-nav ms-auto', // Clases Bootstrap para estilizar el menú
-                                'add_li_class' => 'nav-item mx-2', // Clases a cada <li>
-                                'link_class' => 'nav-link' // Clases para los enlaces <a>
+                                'theme_location' => 'primary', 
+                                // Debe coincidir con el registrado en functions.php
+                                'container' => 'ul', 
+                                // Define que el contenedor será un <ul>
+                                'menu_class' => 'navbar-nav ms-auto', 
+                                // Clases Bootstrap para estilizar el menú
+                                'add_li_class' => 'nav-item mx-2', 
+                                // Clases a cada <li>
+                                'link_class' => 'nav-link' 
+                                // Clases para los enlaces <a>
                             ));
                             ?>
                         </div>
+
                     </div>
                 </nav>
                 <!-- Fin del menú de navegación -->
+
+
 
                 <!-- Sección principal de texto del blog-text -->
                 <div class="blog-text ms-sm-5 ps-sm-5 ms-md-5 ps-md-5 ms-lg-5 ps-lg-5">
@@ -62,6 +81,7 @@
                                 <img class="line4 mt-2 me-4" src="img/Line 4.png" alt="line4">
                                 <p class="">Progressively incentivize cooperative systems through technically sound<br> functionalities. The credibly productivate seamless data.</p>
                             </div>
+
                             <!-- Contenedor flex para las imágenes de los puntos -->
                             <div>
                                 <div class="d-flex ellipse mt-5">
@@ -70,10 +90,13 @@
                                     <img class="ms-4" src="<?php echo get_template_directory_uri(); ?>/img/Ellipse 7.png" alt="">
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
                 <!-- Fin del primer bloque 'blog-text' -->
+                 
             </div>
             <!-- Fin del contenedor slider -->
         </header>
